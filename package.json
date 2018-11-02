@@ -1,0 +1,48 @@
+{
+  "name": "type-conversions",
+  "version": "1.0.0",
+  "description": "Тренажёр для изучения javascript преобразований.",
+  "main": "index_bundle.js",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --open --hot",
+    "build": "webpack --mode production",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codyfet/type-conversions.git"
+  },
+  "keywords": [],
+  "author": "a.volkov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codyfet/react-workspace/issues"
+  },
+  "homepage": "https://github.com/codyfet/type-conversions/",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "file-loader": "^2.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "img-loader": "^3.0.1",
+    "less": "^3.0.1",
+    "less-loader": "^4.1.0",
+    "style-loader": "^0.20.3",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.5.0",
+    "webpack-cli": "^2.0.14",
+    "webpack-dev-server": "^3.1.3"
+  },
+  "dependencies": {
+    "crypto-js": "^3.1.9-1",
+    "gh-pages": "^2.0.1",
+    "react": "^16.3.1",
+    "react-bootstrap": "^0.32.4",
+    "react-dom": "^16.3.1"
+  }
+}

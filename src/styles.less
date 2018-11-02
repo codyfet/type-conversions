@@ -1,0 +1,156 @@
+@GENERAL_BACKGROUND_COLOR: #3C5667;
+@SPECIAL_BACKGROUND_COLOR: #FA446A;
+
+@GENERAL_CARD_COLOR: #A6948B;
+@SPECIAL_CARD_COLOR: #0eb7e4;
+
+@FONT: Menlo,Monaco,Consolas,"Courier New",monospace;
+
+.background_mixin(@COLOR) {
+    background: @COLOR;
+}
+
+.color_mixin(@COLOR) {
+    color: @COLOR;
+}
+
+html, body {
+    height: 100%;
+}
+
+#root {
+    .background_mixin(@GENERAL_BACKGROUND_COLOR);
+    height: auto;
+    font-family: 'Cuprum', sans-serif;
+    font-size: 16px;
+
+    &.special {
+        .background_mixin(@SPECIAL_BACKGROUND_COLOR);
+    }
+}
+
+.header {
+    height: 30px;
+    background: black;
+    display: flex;
+    justify-content: space-between;
+
+    div {
+        padding-top: 5px;
+        margin-right: 20px;
+
+        a {
+            margin: 0 10px;
+            color: white;
+            font-weight: 400;
+
+            &:hover {
+                cursor: pointer;
+                text-decoration: none;
+                .color_mixin(@GENERAL_CARD_COLOR);
+
+                .special & {
+                    .color_mixin(@SPECIAL_CARD_COLOR);
+                }
+            }
+        }
+    }
+}
+
+.footer {
+    height: 160px;
+    background: black;
+
+    .links {
+        padding-top: 15px;
+
+        li {
+            list-style: none;
+
+            &.li-label {
+                color: white;
+            }
+        }
+    }
+}
+
+.main-panel {
+    margin: 1% 7%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .quiz-item {
+        width: 400px;
+        padding: 10px;
+        margin: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        .background_mixin(@GENERAL_CARD_COLOR);
+
+        .special & {
+            .background_mixin(@SPECIAL_CARD_COLOR);
+        }
+
+        .result {
+            font-family: @FONT;
+        }
+
+        .has-error {
+            .help-block, .form-control-feedback {
+                color: red;
+            }
+        }
+
+        .has-success {
+            .form-control {
+                border-color: #03ff01;
+            }
+            .help-block, .form-control-feedback {
+                color: #03ff01;
+            }
+        }
+
+        .details {
+            position: absolute;
+            right: 0;
+            top: 72px;
+            color: white;
+            cursor: pointer;
+        }
+        
+        .type {
+            color: white;
+
+            &:hover {
+                color: red;
+                cursor: pointer;
+                text-decoration: none;
+            }
+        }
+    }
+
+    .form-control-feedback {
+        top: 33px;
+    }
+}
+
+#confetti{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+}
+
+.sticker {
+    background: url('../img/sticker.png');
+    height: 180px;
+    width: 210px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-size: 85%;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
