@@ -80,7 +80,6 @@ export class App extends React.Component {
                         <li><a href='https://www.w3schools.com/js/js_type_conversion.asp'>https://www.w3schools.com/js/js_type_conversion.asp</a></li>
                     </ul>
                 </div>
-                {!!secret && <div className="sticker"></div>}
             </React.Fragment>
         );
     }
