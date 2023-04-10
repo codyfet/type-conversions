@@ -317,12 +317,12 @@ export const primitives = [
         rule: "Явное преобразование к типу number."
     },
     {
-        question: "Number ('\n')",
+        question: "Number (' ')",
         type: "Численное преобразование",
         rule: "Явное преобразование к типу number."
     },
     {
-        question: "Number (' 12s '')",
+        question: "Number (' 12s ')",
         type: "Численное преобразование",
         rule: "Явное преобразование к типу number."
     },
